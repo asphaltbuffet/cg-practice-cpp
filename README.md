@@ -1,7 +1,7 @@
 cppbase
 ===
 
-<a href="http://opensource.org/licenses/MIT" target="_blank"><img src="http://img.shields.io/badge/license-MIT-brightgreen.png" alt="MIT license"></a><a href="https://travis-ci.org/asphaltbuffet/cppbase" target="_blank"><img src="https://travis-ci.org/asphaltbuffet/cppbase.png?branch=master" alt="Build Status"></a><a href="https://coveralls.io/github/asphaltbuffet/cppbase?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/asphaltbuffet/cppbase/badge.png?branch=master" alt="Coverage Status"></a>
+<a href="http://opensource.org/licenses/MIT" target="_blank"><img src="http://img.shields.io/badge/license-MIT-brightgreen.png" alt="MIT license"></a>[![Build Status](https://travis-ci.org/asphaltbuffet/cppbase.svg?branch=master)](https://travis-ci.org/asphaltbuffet/cppbase)</a>[![Coverage Status](https://coveralls.io/repos/github/asphaltbuffet/cppbase/badge.svg?branch=master)](https://coveralls.io/github/asphaltbuffet/cppbase?branch=master)
 
 `cppbase` is a template for a simple CMake-based C++ project: it can be used as the basis for new projects. An example CMake module is available to make it easy to include your project in other projects (should be customized): [Findcppbase.cmake](https://github.com/openastro/cmake-modules/blob/master/Modules/Findcppbase.cmake).
 
