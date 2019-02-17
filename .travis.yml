@@ -1,4 +1,4 @@
-# Copyright (c) <year> <author> (<email>)
+# Copyright (c) 2019 Ben Lechlitner (otherland@gmail.com)
 # Distributed under the MIT License.
 # See accompanying file LICENSE.md or copy at http://opensource.org/licenses/MIT
 
@@ -12,9 +12,10 @@ compiler:
 
 env:
   global:
-    # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
-    #   via the "travis encrypt" command using the project repo's public key
-    - secure: "i0MCd0QkxVVAVMXYQXl0phkzpHvtSvLYJg28CF4fuiT+0jSC7kuaZ6XGCa32cohc2BZP4OmX/MBjoMmPJUNWS+yQ8TEy4Ml3K/LV5MHu25sv/gi/ZI+3Pvl9WoCKfGBCbEPsQdhoLoeG8s6akJonh8IgGGmVXUVDhROy5DhUENg="
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: "NYcpI2KFyY0QB/I0Qy7oQJcu7E9rnlecsL7t1mpJwOdiGJe/nvq7h4TFeongfjK0waf8uXv7vuVIqI/EWMCc9SobtcU5hHCJSCen57PfaZbXeNs522ib2b/iLyM7Prvio5jA3wijwXkOwgDH/JqkAtU3SEVRjNYHe3B2EeOYl0v3tmIHIK6eWcVTKtKqQQcGDTgk+Rgc2Fm5ea2drPnsLEgP1n2npyFxzrMqAUUCJGThHcA6uwV5Nu6UdhqBTAuWIXDr4PNMF/7fSyStAl9b6ulYfQ+v5DumkIzW4VIIERU9GcFmcqAn5jQKGHX3B01bPGLZpNJkwdvblE8VkBqZi4ztdGXdvW6Da1T5ad/5pNi9XVoch65C7OZhlHiE5AYXApfLz0VnRSO89ize3awPh72NNmXWa/ZqizXaAQ6u9gc8Vsk0A8HFUqRz8dwDXwDajRKHd+4keejKOJwZlfEvAe8wQO1H0SL9gdP5dmoA4Ofk0rH82UT4Dio3DtnbMVQ79ZdDvfRTzJ0jP7ECqeXHdF88iFSg85gMnJgwvkvyHBdFTiZlHQoCElvMNmmdWX7Zkr47xqFC/n20IcQekc8fIqWpitZXPu3xigdlbj7Brx4uh0PFK35wRiAinzJ1fbpiBcZGbcn/TntUDhmflNAyG2B08RjM0xAp6KlX9JTpkzw="
+
   matrix:
     - BUILD_TYPE=Debug TEST_FRAMEWORK=Catch2
     - BUILD_TYPE=Release TEST_FRAMEWORK=Catch2
@@ -33,10 +34,10 @@ matrix:
 addons:
   coverity_scan:
     project:
-      name: "kartikkumar/cppbase"
+      name: "asphaltbuffet/cg-practice-cpp"
       description: "Build submitted via Travis CI"
-    notification_email: me@kartikkumar.com
-    build_command_prepend: "mkdir build; cd build; cmake -DPROJECT_NAME=cppbase -DTEST_FRAMEWORK=$TEST_FRAMEWORK -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DBUILD_TESTS=on .."
+    notification_email: otherland@gmail.com
+    build_command_prepend: "mkdir build; cd build; cmake -DPROJECT_NAME=cg-practice-cpp -DTEST_FRAMEWORK=$TEST_FRAMEWORK -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DBUILD_TESTS=on .."
     build_command: "make"
     branch_pattern: coverity_scan
 
@@ -45,7 +46,7 @@ before_install:
   - bash scripts/install_doxygen.sh
   - chmod ugo+x scripts/check_doxygen.sh
   - if [ "$COVERITY_SCAN_BRANCH_PATTERN" != "coverity_scan" ] && [ "$CXX" == "g++" ] && [ "$BUILD_TYPE" == "Debug" ] && [ "$TEST_FRAMEWORK" == "Catch2" ]; then
-      echo -n | openssl s_client -connect https://scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-;
+      echo -n | openssl s_client -connect https://scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
       pip install --user cpp-coveralls;
     fi
 
@@ -53,7 +54,7 @@ script:
   - if [ "$COVERITY_SCAN_BRANCH_PATTERN" != "coverity_scan" ]; then
       mkdir build;
       cd build;
-      $HOME/cmake/bin/cmake -DPROJECT_NAME=cppbase -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DTEST_FRAMEWORK=$TEST_FRAMEWORK -DBUILD_TESTS=on -DDOXYGEN_EXECUTABLE=$HOME/doxygen/build/bin/doxygen -DBUILD_DOXYGEN_DOCS=on ..;
+      $HOME/cmake/bin/cmake -DPROJECT_NAME=cg-practice-cpp -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DTEST_FRAMEWORK=$TEST_FRAMEWORK -DBUILD_TESTS=on -DDOXYGEN_EXECUTABLE=$HOME/doxygen/build/bin/doxygen -DBUILD_DOXYGEN_DOCS=on ..;
       make;
       ctest -V;
       ../scripts/check_doxygen.sh;
