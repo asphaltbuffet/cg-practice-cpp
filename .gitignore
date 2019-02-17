@@ -35,6 +35,7 @@ doxydocs
 temp
 debug
 external
+.idea
 
 # Project files
 *.sublime*
