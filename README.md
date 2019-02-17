@@ -1,17 +1,14 @@
-cppbase
+cg-practice-cpp
 ===
 
-<a href="http://opensource.org/licenses/MIT" target="_blank"><img src="http://img.shields.io/badge/license-MIT-brightgreen.png" alt="MIT license"></a>[![Build Status](https://travis-ci.org/asphaltbuffet/cppbase.svg?branch=master)](https://travis-ci.org/asphaltbuffet/cppbase)</a>[![Coverage Status](https://coveralls.io/repos/github/asphaltbuffet/cppbase/badge.svg?branch=master)](https://coveralls.io/github/asphaltbuffet/cppbase?branch=master)
+<a href="http://opensource.org/licenses/MIT" target="_blank"><img src="http://img.shields.io/badge/license-MIT-brightgreen.png" alt="MIT license"></a>[![Build Status](https://travis-ci.org/asphaltbuffet/cg-practice-cpp.svg?branch=master)](https://travis-ci.org/asphaltbuffet/cppbase)</a>[![Coverage Status](https://coveralls.io/repos/github/asphaltbuffet/cg-practice-cpp/badge.svg?branch=master)](https://coveralls.io/github/asphaltbuffet/cg-practice-cpp?branch=master)
 
-`cppbase` is a template for a simple CMake-based C++ project: it can be used as the basis for new projects. An example CMake module is available to make it easy to include your project in other projects (should be customized): [Findcppbase.cmake](https://github.com/openastro/cmake-modules/blob/master/Modules/Findcppbase.cmake).
-
-(**N.B. remember to change all instances of `cppbase` to your new project name!**).
+`cg-practice-cpp` is a a CMake-based C++ collection of problems from Codingame.com.
 
 Features
 ------
 
   - General directory structure common to C++ projects
-  - Example of CMake module [Findcppbase.cmake](https://github.com/openastro/cmake-modules/blob/master/Modules/Findcppbase.cmake)
   - Unit testing framework ([Catch2](https://www.github.com/catchorg/Catch2 "Catch2 Github repository") or [GTest](https://github.com/google/googletest "Google Test Github repository"))
   - Install script (`make install`)
   - Uninstall script (`make uninstall`)
@@ -44,19 +41,13 @@ These dependencies will be downloaded and configured automagically, if not alrea
 Installation
 ------
 
-Run the following commands to download, build, and install this project. Substitute `project_name` with the name of your project (if you leave it out, the repository will be cloned to a local folder called `cppbase`). This will customize the project targets for you. Note that `project_name` must not contain spaces! The ` --depth 1` parameter passed to `git clone` ensures that the git history is not downloaded. In case you would like to preserve the history of this project, omit that option.
+Run the following commands to download, build, and install this project.
 
-    git clone https://www.github.com/kartikkumar/cppbase --depth 1 <project_name>
+    git clone https://www.github.com/asphaltbuffet/cg-practice-cpp <project_name>
     cd <project_name>
     git submodule init && git submodule update
     mkdir build && cd build
-    cmake -DPROJECT_NAME=<project_name> .. && cmake --build .
-
-To push this project to your own remote repository, you can run the following command, which will overcome the issues with utilizing a shallow clone:
-
-    git commit --amend .
-
-This rewrites the last commit and ensures that you can then push the repository to a remote (e.g., Github, BitBucket, Gitlab, etc.).
+    cmake -DPROJECT_NAME=cg-practice-cpp .. && cmake --build .
 
 To install the header files and libraries, run the following from within the `build` directory:
 
@@ -115,19 +106,7 @@ This project has been set up with a specific file/folder structure in mind. The 
   - `ProjectFiles.cmake`: list of project source files to build
   - `Uninstall.cmake.in`: uninstall configuration scrip, necessary for the `make uninstall` target
 
-
-Contributing
-------------
-
-Once you've made your great commits:
-
-  1. [Fork](https://github.com/kartikkumar/cppbase/fork) cppbase
-  2. Create a topic branch - `git checkout -b my_branch`
-  3. Push to your branch - `git push origin my_branch`
-  4. Create a [Pull Request](http://help.github.com/pull-requests/) from your branch
-  5. That's it!
-
 Disclaimer
 ------------
 
-The copyright holders are not liable for any damage(s) incurred due to improper use of `cppbase`.
+The copyright holders are not liable for any damage(s) incurred due to improper use of `cg-practice-cpp`.
