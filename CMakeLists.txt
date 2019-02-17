@@ -4,6 +4,7 @@
 
 cmake_minimum_required(VERSION 2.6)
 set(CMAKE_CXX_STANDARD 11)
+set(PROJECT_NAME                                "cg-practice-cpp")
 
 # Check if project name has been specified correctly.
 if((NOT PROJECT_NAME))
@@ -19,7 +20,7 @@ set(${CMAKE_PROJECT_NAME}_SUMMARY              "${PROJECT_SUMMARY}")
 set(${CMAKE_PROJECT_NAME}_VENDOR_NAME          "${PROJECT_VENDOR_NAME}")
 set(${CMAKE_PROJECT_NAME}_VENDOR_CONTACT       "${PROJECT_VENDOR_CONTACT}")
 set(${CMAKE_PROJECT_NAME}_VERSION_MAJOR        0)
-set(${CMAKE_PROJECT_NAME}_VERSION_MINOR        0)
+set(${CMAKE_PROJECT_NAME}_VERSION_MINOR        1)
 set(${CMAKE_PROJECT_NAME}_VERSION_PATCH        0)
 set(PROJECT_VERSION
   "${${CMAKE_PROJECT_NAME}_VERSION_MAJOR}.${${CMAKE_PROJECT_NAME}_VERSION_MINOR}.${${CMAKE_PROJECT_NAME}_VERSION_PATCH}")
@@ -103,7 +104,7 @@ include_directories(AFTER "${INCLUDE_PATH}")
 
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${LIB_PATH})
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${LIB_PATH})
-add_library(${LIB_NAME} ${SRC})
+add_library(${LIB_NAME} ${SRC} src/power-of-thor-episode-1.cpp)
 
 if(BUILD_MAIN)
   set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${BIN_PATH})
