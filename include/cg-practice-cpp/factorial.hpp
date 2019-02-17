@@ -1,13 +1,13 @@
 /*
- * Copyright (c) <year> <author> (<email>)
+ * Copyright (c) 2019 Ben Lechlitner (otherland@gmail.com)
  * Distributed under the MIT License.
  * See accompanying file LICENSE.md or copy at http://opensource.org/licenses/MIT
  */
 
-#ifndef CPPBASE_FACTORIAL_HPP
-#define CPPBASE_FACTORIAL_HPP
+#ifndef CG_PRACTICE_CPP_FACTORIAL_HPP
+#define CG_PRACTICE_CPP_FACTORIAL_HPP
 
-namespace cppbase
+namespace cg_practice_cpp
 {
 
 //! Compute factorial.
@@ -19,6 +19,6 @@ namespace cppbase
  */
 const int computeFactorial( const int integerNumber );
 
-} // namespace cppbase
+} // namespace cg_practice_cpp
 
 #endif // CPPBASE_FACTORIAL_HPP

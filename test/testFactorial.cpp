@@ -1,5 +1,5 @@
 /*
- * Copyright (c) <year> <author> (<email>)
+ * Copyright (c) 2019 Ben Lechlitner (otherland@gmail.com)
  * Distributed under the MIT License.
  * See accompanying file LICENSE.md or copy at http://opensource.org/licenses/MIT
  */
@@ -14,9 +14,9 @@
 
 #endif // USE_CATCH2
 
-#include "cppbase/factorial.hpp"
+#include "cg-practice-cpp/factorial.hpp"
 
-namespace cppbase
+namespace cg_practice_cpp
 {
 namespace tests
 {
@@ -46,4 +46,4 @@ TEST(Factorial, Unit)
 #endif // USE_CATCH2
 
 } // namespace tests
-} // namespace cppbase
+} // namespace cg_practice_cpp

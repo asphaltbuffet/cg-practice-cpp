@@ -1,12 +1,12 @@
 /*
- * Copyright (c) <year> <author> (<email>)
+ * Copyright (c) 2019 Ben Lechlitner (otherland@gmail.com)
  * Distributed under the MIT License.
  * See accompanying file LICENSE.md or copy at http://opensource.org/licenses/MIT
  */
 
-#ifndef CPPBASE_HPP
-#define CPPBASE_HPP
+#ifndef  CG_PRACTICE_CPP_HPP
+#define  CG_PRACTICE_CPP_HPP
 
-#include "cppbase/factorial.hpp"
+#include "cg-practice-cpp/factorial.hpp"
 
-#endif // CPPBASE_HPP
+#endif //  CG_PRACTICE_CPP_HPP

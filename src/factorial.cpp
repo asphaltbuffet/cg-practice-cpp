@@ -1,5 +1,5 @@
 /*
- * Copyright (c) <year> <author> (<email>)
+ * Copyright (c) 2019 Ben Lechlitner (otherland@gmail.com)
  * Distributed under the MIT License.
  * See accompanying file LICENSE.md or copy at http://opensource.org/licenses/MIT
  */
@@ -7,9 +7,9 @@
 #include <sstream>
 #include <stdexcept>
 
-#include "cppbase/factorial.hpp"
+#include "cg-practice-cpp/factorial.hpp"
 
-namespace cppbase
+namespace cg_practice_cpp
 {
 
 //! Compute factorial.
@@ -25,4 +25,4 @@ const int computeFactorial( const int integerNumber )
 	return ( integerNumber == 0 ) ? 1 : integerNumber * computeFactorial( integerNumber  - 1 );
 }
 
-} // namespace cppbase
+} // namespace cg_practice_cpp
