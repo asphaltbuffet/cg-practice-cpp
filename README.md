@@ -1,7 +1,7 @@
 cg-practice-cpp
 ===
 
-<a href="http://opensource.org/licenses/MIT" target="_blank"><img src="http://img.shields.io/badge/license-MIT-brightgreen.png" alt="MIT license"></a>[![Build Status](https://travis-ci.org/asphaltbuffet/cg-practice-cpp.svg?branch=master)](https://travis-ci.org/asphaltbuffet/cppbase)</a>[![Coverage Status](https://coveralls.io/repos/github/asphaltbuffet/cg-practice-cpp/badge.svg?branch=master)](https://coveralls.io/github/asphaltbuffet/cg-practice-cpp?branch=master)
+<a href="http://opensource.org/licenses/MIT" target="_blank"><img src="http://img.shields.io/badge/license-MIT-brightgreen.png" alt="MIT license"></a>[![Build Status](https://travis-ci.org/asphaltbuffet/cg-practice-cpp.svg?branch=master)](https://travis-ci.org/asphaltbuffet/cppbase)</a>[![Coverage Status](https://coveralls.io/repos/github/asphaltbuffet/cg-practice-cpp/badge.svg?branch=master)](https://coveralls.io/github/asphaltbuffet/cg-practice-cpp?branch=master)<a href="https://scan.coverity.com/projects/asphaltbuffet-cg-practice-cpp"><img alt="Coverity Scan Build Status" src="https://img.shields.io/coverity/scan/17709.svg"/></a>
 
 `cg-practice-cpp` is a a CMake-based C++ collection of problems from Codingame.com.
 
