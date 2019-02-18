@@ -48,6 +48,12 @@ before_install:
   - echo -n | openssl s_client -connect https://scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
   - pip install --user cpp-coveralls
 
+install:
+  - cd ${TRAVIS_BUILD_DIR}
+  - wget http://ftp.de.debian.org/debian/pool/main/l/lcov/lcov_1.13.orig.tar.gz
+  - tar xf lcov_1.13.orig.tar.gz
+  - sudo make -C lcov-1.13/ install
+
 script:
   - if [ "$COVERITY_SCAN_BRANCH_PATTERN" != "coverity_scan" ]; then
       mkdir build;
