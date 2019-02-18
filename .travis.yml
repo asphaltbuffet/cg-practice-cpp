@@ -46,21 +46,17 @@ before_install:
   - bash scripts/install_doxygen.sh
   - chmod ugo+x scripts/check_doxygen.sh
   - echo -n | openssl s_client -connect https://scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
-  - if [ "$COVERITY_SCAN_BRANCH_PATTERN" != "coverity_scan" ] && [ "$CXX" == "g++" ] && [ "$BUILD_TYPE" == "Debug" ] && [ "$TEST_FRAMEWORK" == "Catch2" ]; then
-      pip install --user cpp-coveralls;
-    fi
+  - pip install --user cpp-coveralls
 
 script:
   - if [ "$COVERITY_SCAN_BRANCH_PATTERN" != "coverity_scan" ]; then
       mkdir build;
       cd build;
-      $HOME/cmake/bin/cmake -DPROJECT_NAME=cg-practice-cpp -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DTEST_FRAMEWORK=$TEST_FRAMEWORK -DBUILD_TESTS=on -DDOXYGEN_EXECUTABLE=$HOME/doxygen/build/bin/doxygen -DBUILD_DOXYGEN_DOCS=on ..;
+      $HOME/cmake/bin/cmake -DPROJECT_NAME=cg-practice-cpp -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DTEST_FRAMEWORK=$TEST_FRAMEWORK -DBUILD_COVERAGE_ANALYSIS=on -DBUILD_TESTS=on -DDOXYGEN_EXECUTABLE=$HOME/doxygen/build/bin/doxygen -DBUILD_DOXYGEN_DOCS=on ..;
       make;
       ctest -V;
       ../scripts/check_doxygen.sh;
     fi
 
 after_success:
-  - if [ "$COVERITY_SCAN_BRANCH_PATTERN" != "coverity_scan" ] && [ "$CXX" == "g++" ] && [ "$BUILD_TYPE" == "Debug" ] && [ "$TEST_FRAMEWORK" == "Catch2" ]; then
-      coveralls --root .. -E ".*external.*" -E ".*CMakeFiles.*" -E ".*test/.*.cpp.*" -E ".*src/main.cpp.*";
-    fi
+  - coveralls --root .. -E ".*external.*" -E ".*CMakeFiles.*" -E ".*test/.*.cpp.*" -E ".*src/main.cpp.*" --gcov-options '\-lp'
